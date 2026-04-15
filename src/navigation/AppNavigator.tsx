@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text } from 'react-native';
-import HabitListScreen from './screens/HabitListScreen';
-import HabitDetailScreen from './screens/HabitDetailScreen';
-import StatsScreen from './screens/StatsScreen';
+import HabitListScreen from '../screens/HabitListScreen';
+import HabitDetailScreen from '../screens/HabitDetailScreen';
+import StatsScreen from '../screens/StatsScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

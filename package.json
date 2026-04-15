@@ -2,7 +2,7 @@
   "name": "habit-tracker-reactnative",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@expo/metro-runtime": "^55.0.9",
     "@react-native-async-storage/async-storage": "^3.0.2",
     "@react-navigation/bottom-tabs": "^7.15.9",
     "@react-navigation/native": "^7.2.2",
@@ -19,9 +20,11 @@
     "expo": "^55.0.15",
     "expo-status-bar": "^55.0.5",
     "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "react-native": "^0.85.1",
     "react-native-safe-area-context": "^5.7.0",
     "react-native-screens": "^4.24.0",
+    "react-native-web": "^0.21.2",
     "typescript": "^5.9.3"
   }
 }
