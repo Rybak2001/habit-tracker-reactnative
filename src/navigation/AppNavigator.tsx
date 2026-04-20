@@ -6,6 +6,10 @@ import { Text } from 'react-native';
 import HabitListScreen from '../screens/HabitListScreen';
 import HabitDetailScreen from '../screens/HabitDetailScreen';
 import StatsScreen from '../screens/StatsScreen';
+import CalendarScreen from '../screens/CalendarScreen';
+import AchievementsScreen from '../screens/AchievementsScreen';
+import SettingsScreen from '../screens/SettingsScreen';
+import HabitHistoryScreen from '../screens/HabitHistoryScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -28,7 +32,7 @@ function HomeTabs() {
           paddingBottom: 8,
           paddingTop: 4,
         },
-        tabBarLabelStyle: { fontSize: 12, fontWeight: '600' },
+        tabBarLabelStyle: { fontSize: 11, fontWeight: '600' },
         headerStyle: { backgroundColor: '#6C63FF' },
         headerTintColor: '#fff',
         headerTitleStyle: { fontWeight: '700' },
@@ -38,16 +42,40 @@ function HomeTabs() {
         name="Habits"
         component={HabitListScreen}
         options={{
-          title: 'My Habits',
-          tabBarIcon: ({ color }) => <Text style={{ fontSize: 22, color }}>📋</Text>,
+          title: 'Hábitos',
+          tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>📋</Text>,
+        }}
+      />
+      <Tab.Screen
+        name="Calendar"
+        component={CalendarScreen}
+        options={{
+          title: 'Calendario',
+          tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>📅</Text>,
+        }}
+      />
+      <Tab.Screen
+        name="Achievements"
+        component={AchievementsScreen}
+        options={{
+          title: 'Logros',
+          tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>🏆</Text>,
         }}
       />
       <Tab.Screen
         name="Stats"
         component={StatsScreen}
         options={{
-          title: 'Statistics',
-          tabBarIcon: ({ color }) => <Text style={{ fontSize: 22, color }}>📊</Text>,
+          title: 'Estadísticas',
+          tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>📊</Text>,
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          title: 'Ajustes',
+          tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>⚙️</Text>,
         }}
       />
     </Tab.Navigator>
@@ -73,8 +101,13 @@ export default function AppNavigator() {
           name="HabitDetail"
           component={HabitDetailScreen}
           options={({ route }: any) => ({
-            title: route.params?.habitId ? 'Edit Habit' : 'New Habit',
+            title: route.params?.habitId ? 'Editar hábito' : 'Nuevo hábito',
           })}
+        />
+        <Stack.Screen
+          name="HabitHistory"
+          component={HabitHistoryScreen}
+          options={{ title: 'Historial' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
